@@ -3,21 +3,28 @@
   font-size: 16px;
 }
 
+.header {
+  font-size: 30px;
+  padding: 7px;
+  text-align: center;
+}
+
 .container {
-  background-color: red;
   gap: 10px;
-  margin: auto;
-  padding: 10px;
+  display:flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-flow: row wrap;
 }
 
 .add_box {
-  background-color: #bdbdbd;
+  background-color: #a3c9dc;
   padding: 15px;
   display: inline-grid;
   gap: 10px;
   border: 2px solid black;
   border-radius: 10px;
-  width: calc(50vh + 24vw);
+  width: calc(35vh + 12vw);
 }
 
 .task_table {
@@ -35,6 +42,6 @@ button:hover {
   box-shadow: inset 0 0 0 1000px rgba(255,255,255,.3);
 }
 
-td{
+td {
   text-align:center;
 }
