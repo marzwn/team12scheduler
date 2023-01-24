@@ -1,11 +1,7 @@
-
- 
- returnStoreData();
-
+returnStoreData();
 
  function returnStoreData(){
     let array = JSON.parse(localStorage.getItem("table"));
-
 
     if (array != null){
       for (let i = 0; i < array.length; i++){
@@ -21,14 +17,7 @@
         due.appendChild(document.createTextNode(array[i].dueDate));
       }
     }
-      
-
  }
- 
-
-
-
- 
  
  function storeData(){
     let taskName=document.getElementById("taskName").value;
@@ -54,10 +43,19 @@
     due.appendChild(document.createTextNode(dueDate));
   }
 
-function clearData(){
-  localStorage.clear()
-  document.getElementById('saveTable').getElementsByTagName('tbody')[0].innerHTML = "";
+function clearData() {
+  localStorage.clear();
+  //var table = document.getElementById("saveTable");
+  let tbody = document.getElementById('saveTable').getElementsByTagName('tbody')[0];
+  tbody.innerHTML = "";
+  let newRow = tbody.insertRow(0);
+  let point = newRow.insertCell();
+  let task = newRow.insertCell();
+  let assign = newRow.insertCell();
+  let due = newRow.insertCell();
+
+  point.innerHTML = "<b>Point Value</b>";
+  task.innerHTML = "<b>Name</b>";
+  assign.innerHTML = "<b>Class</b>";
+  due.innerHTML = "<b>Due Date</b>";
 }
-
-
-
