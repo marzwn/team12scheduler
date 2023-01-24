@@ -4,6 +4,7 @@ returnStoreData();
     let array = JSON.parse(localStorage.getItem("table"));
 
     if (array != null){
+      sort(array);
       for (let i = 0; i < array.length; i++){
         let tbody = document.getElementById('saveTable').getElementsByTagName('tbody')[0];
         let newRow = tbody.insertRow();
@@ -58,4 +59,41 @@ function clearData() {
   task.innerHTML = "<b>Name</b>";
   assign.innerHTML = "<b>Class</b>";
   due.innerHTML = "<b>Due Date</b>";
+}
+
+
+function sort(array) {
+  for (let i = 0; i < array.length; i++){
+    let value  = 0;
+    let max = array[i].point;
+    for (let j = i+1; j < array.length; j++){
+      if (array[j].point > max){
+        max = array[j].point;
+        value = j;
+      }
+    }
+    if (max != array[i].point){
+      temp = array[i];
+      array[i] = array[value];
+      array[value] = temp;
+    }
+  }
+}
+
+function sortTable() {
+  for (let i = 0; i < array.length; i++){
+    let value  = 0;
+    let max = array[i].point;
+    for (let j = i+1; j < array.length; j++){
+      if (array[j].point > max){
+        max = array[j].point;
+        value = j;
+      }
+    }
+    if (max != array[i].point){
+      temp = array[i];
+      array[i] = array[value];
+      array[value] = temp;
+    }
+  }
 }
