@@ -79,21 +79,3 @@ function sort(array) {
     }
   }
 }
-
-function sortTable() {
-  for (let i = 0; i < array.length; i++){
-    let value  = 0;
-    let max = array[i].point;
-    for (let j = i+1; j < array.length; j++){
-      if (array[j].point > max){
-        max = array[j].point;
-        value = j;
-      }
-    }
-    if (max != array[i].point){
-      temp = array[i];
-      array[i] = array[value];
-      array[value] = temp;
-    }
-  }
-}
